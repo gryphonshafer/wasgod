@@ -35,8 +35,6 @@ for my $testament ( conf->get('structure')->@* ) {
                     my $chapter_name = $reference->content;
                     $reference->remove;
 
-                    $dom->find('obml i')->each( sub { $_->tag('italic') } );
-
                     my ( @footnotes, @crossrefs );
 
                     my $number = 1;
@@ -78,6 +76,8 @@ for my $testament ( conf->get('structure')->@* ) {
                             '</ul></div>'
                         );
                     }
+
+                    $dom->find('obml i')->each( sub { $_->tag('italic') } );
 
                     my $html_file = $word_html->child(
                         join( '/', map { slugify $_ } $src_file->to_rel($bible_src)->to_array->@* ) . '.html'

@@ -1,2 +1,1 @@
-# wasgod
-WasGod.org web site
+# WasGod.org

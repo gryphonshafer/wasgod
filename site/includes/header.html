@@ -13,8 +13,21 @@
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <link rel="stylesheet" type="text/css" media="screen" href="/style.css">
-        <script async src="/page.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?version=<!--#echo var='version' -->">
+        <link rel="stylesheet" type="text/css" media="screen" href="/style.css?version=<!--#echo var='version' -->">
+        <script async src="/page.js?version=<!--#echo var='version' -->"></script>
     </head>
     <body>
+        <header>
+            <p class="title">WasGod.org</p>
+            <p class="subtitle">"Was God" Creative Commons Literal Translation of the Bible</p>
+        </header>
+
+        <nav>
+            <p class="header">Books of the Bible</p>
+            <p>The following books have been or are in the process of being translated:</p>
+            <toc></toc>
+        </nav>
+
+        <main>
+            <h1><!--#echo var="title" --></h1>

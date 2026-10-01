@@ -5,14 +5,14 @@ This is the software, data, and supporting content behind the [WasGod.org](https
 ## Installation
 
 1. Clone this project
-2. Clone [Bible](https://github.com/gryphonshafer/Bible) into the `~/site` directory of this project's checkout
-3. Run `~/bin/build.pl`
+2. Clone [Bible](https://github.com/gryphonshafer/Bible) into `~/Bible`
+3. Run `~/build.pl`
 4. In your web server of choice, set `~/site` as the location root and turn on server-side includes
 
 ## Content Updates
 
-1. Pull [Bible](https://github.com/gryphonshafer/Bible) from within `~/site/Bible`
-2. Rerun `~/bin/build.pl`
+1. Pull [Bible](https://github.com/gryphonshafer/Bible) from within `~/Bible`
+2. Rerun `~/build.pl`
 
 ## Dependencies
 

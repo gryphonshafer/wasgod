@@ -1,2 +1,0 @@
-requires 'exact', '1.32';
-requires 'exact::conf', '1.11';

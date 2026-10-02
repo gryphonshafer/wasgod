@@ -10,6 +10,13 @@ body {
     padding    : 0;
     line-height: 1.5rem;
 
+    display              : grid;
+    grid-template-rows   : auto 1fr;
+    grid-template-columns: 13rem 1fr;
+    grid-template-areas  :
+        'header header'
+        'nav main';
+
     background-color: #fafafa;
     background-image:
         linear-gradient( #eee 1px, transparent 1px ),
@@ -18,19 +25,24 @@ body {
     background-position: 0 0;
 
     & > header {
+        grid-area       : header;
         background-color: #9cf;
         border-bottom   : 3px double #369;
         line-height     : 1.125rem;
         box-shadow      : 0 0 0.25em rgba( 0, 0, 0, 0.25 );
 
         p.title {
-            margin        : 0;
-            padding       : 0.25em;
+            margin        : 0 0 0 0;
+            padding       : 0.5em 0.25em 0.25em 0.25em;
             font-size     : 2em;
             font-weight   : bold;
-            color         : #c0f0ff;
             letter-spacing: 0.125em;
             font-style    : italic;
+
+            a {
+                text-decoration: none;
+                color          : #c0f0ff;
+            }
         }
 
         p.subtitle {
@@ -60,15 +72,10 @@ body {
     }
 
     nav {
+        grid-area     : nav;
+        align-self    : start;
         padding       : 0.5rem;
         padding-bottom: 0;
-        width         : 150px;
-        float         : left;
-
-        @media ( max-width: 600px ) {
-            width: unset;
-            float: unset;
-        }
 
         p:not(.header), ul {
             font-size: 0.8rem;
@@ -98,6 +105,9 @@ body {
     }
 
     main {
+        grid-area     : main;
+        align-self    : start;
+        margin-left   : 0;
         padding       : 1rem;
         padding-bottom: 0;
 
@@ -176,6 +186,28 @@ body {
                 vertical-align: super;
                 font-size     : 0.75em;
                 line-height   : 0;
+            }
+        }
+    }
+}
+
+@media ( max-width: 600px ) {
+    body {
+        grid-template-rows   : auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas  :
+            'header'
+            'main'
+            'nav';
+
+        main {
+            margin-left  : 1rem;
+            margin-bottom: 0;
+        }
+
+        nav {
+            p:not(.header), ul {
+                font-size: 1rem;
             }
         }
     }
